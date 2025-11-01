@@ -5,8 +5,10 @@ class EVM{
     std::vector<uint64_t> stack;
     size_t pc = 0; //program counter
     bool running = true;
+    size_t const MAX_STACK_SIZE = 1024;
     
     void push(uint64_t value){
+        if(size() == MAX_STACK_SIZE) throw std::runtime_error("Stack Overflow.");
         stack.push_back(value); 
     }
 
@@ -23,6 +25,7 @@ class EVM{
         return stack.size();
     }
 
+    public:
     void execute(std::vector<uint8_t> bytecode){
         while(running && pc < bytecode.size()){
             uint8_t opcode = bytecode[pc++];
@@ -61,8 +64,7 @@ class EVM{
                     if(size() < 2) throw std::runtime_error("Not enough values on the stack.");
                     uint64_t a = pop();
                     uint64_t b = pop();
-                    if(b==0) push(0);  
-                    push(a/b);
+                    push(b == 0 ? 0 : a/b);
                     break;
                 }
 
