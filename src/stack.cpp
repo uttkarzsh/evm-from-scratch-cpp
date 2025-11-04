@@ -1,17 +1,19 @@
 #include "stack.hpp"
 
 void Stack::push(uint64_t val){
-    if(size() == MAX_STACK_SIZE) throw std::runtime_error("Stack Overflow.");
+    if(size() == MAX_STACK_SIZE){
+        throw std::runtime_error("Stack overflow.");
+    }
     stack.push_back(val);
 }
 
 uint64_t Stack::pop(){
     if(stack.empty()){
-            throw std::runtime_error("stack is empty");
-        }
-        uint64_t val = stack.back();
-        stack.pop_back();
-        return val;
+        throw std::runtime_error("Stack is empty.");
+    }
+    uint64_t val = stack.back();
+    stack.pop_back();
+    return val;
 }
 
 size_t Stack::size() const {
@@ -19,6 +21,8 @@ size_t Stack::size() const {
 }
 
 uint64_t Stack::top() const {
-    if (stack.empty()) throw std::runtime_error("stack empty");
+    if(stack.empty()){
+        throw std::runtime_error("Stack is empty.");
+    }
     return stack.back();
 }

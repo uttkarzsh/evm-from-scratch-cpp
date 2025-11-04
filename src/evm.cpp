@@ -64,3 +64,7 @@ void EVM::execute(const std::vector<uint8_t>& bytecode){
             }
         }  
 }
+
+uint64_t EVM::stackTop(){
+    return stack.top();
+}

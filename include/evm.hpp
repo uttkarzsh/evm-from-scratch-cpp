@@ -10,4 +10,5 @@ class EVM {
 
     public:
     void execute(const std::vector<uint8_t>& bytecode);
+    uint64_t stackTop();
 };
