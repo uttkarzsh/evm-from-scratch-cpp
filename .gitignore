@@ -1,0 +1,34 @@
+# Build directories
+/build/
+[Cc]MakeCache.txt
+[Cc]MakeFiles/
+cmake_install.cmake
+Makefile
+install_manifest.txt
+
+# Compiled binaries and libraries
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.lib
+*.exe
+*.out
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.user
+*.workspace
+*.code-workspace
+
+# macOS specific
+.DS_Store
+
+# Other CMake-generated files
+CMakeScripts/
+Testing/
+CTestTestfile.cmake
