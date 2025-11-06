@@ -8,8 +8,7 @@ int main() {
     Utils utils;
 
     std::string bytecode = "0x600160020160aa01";
-    std::vector<uint8_t> code = utils.stringToArray(bytecode);
+    std::vector<uint8_t> bytecodeArray = utils.stringToArray(bytecode);
 
-    evm.execute(code);
-    std::cout << "Execution Complete. Stack Top: " << evm.stackTop();
+    evm.execute(bytecodeArray);
 }
