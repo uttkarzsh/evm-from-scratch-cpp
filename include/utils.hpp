@@ -2,7 +2,6 @@
 #include <vector>
 #include <string>
 
-class Utils {
-    public:
+namespace utils {
     std::vector<uint8_t> stringToArray(std::string input);
 };

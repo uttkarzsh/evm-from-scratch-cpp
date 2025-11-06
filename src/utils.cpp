@@ -1,6 +1,6 @@
 #include "utils.hpp"
 
-std::vector<uint8_t> Utils::stringToArray(std::string input){
+std::vector<uint8_t> utils::stringToArray(std::string input){
     std::vector<uint8_t> bytecode;
     for(int i = 2; i < input.length(); i = i +2){
         std::string hexPrefix = "0x";
