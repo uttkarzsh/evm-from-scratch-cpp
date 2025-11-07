@@ -1,8 +1,10 @@
+#include "types.hpp"
 #include "evm.hpp"
 #include "opcodes.hpp"
 #include "handlers/opcode_handlers.hpp"
 #include <vector>
 #include <stdexcept>
+using namespace evm_types; 
 
 void EVM::execute(const std::vector<uint8_t>& bytecode){
     while(running && pc < bytecode.size()){
@@ -34,6 +36,6 @@ void EVM::execute(const std::vector<uint8_t>& bytecode){
     }  
 }
 
-uint64_t EVM::stackTop(){
+uint256_t EVM::stackTop(){
     return stack.top();
 }

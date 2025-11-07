@@ -2,6 +2,7 @@
 #include <vector>
 #include <cstdint>
 #include "stack.hpp"
+#include "types.hpp"
 
 class EVM {
     Stack stack;
@@ -10,5 +11,5 @@ class EVM {
 
     public:
     void execute(const std::vector<uint8_t>& bytecode);
-    uint64_t stackTop();
+    evm_types::uint256_t stackTop();
 };

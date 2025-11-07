@@ -1,15 +1,17 @@
 #pragma once 
+#include "types.hpp"
 #include <vector>
 #include <stdexcept>
 #include <cstdint>
 
+
 class Stack {
-    std::vector <uint64_t> stack;
+    std::vector <evm_types::uint256_t> stack;
     static constexpr size_t MAX_STACK_SIZE = 1024;
 
     public:
-    void push(uint64_t val);
-    uint64_t top()  const;
-    uint64_t pop();
+    void push(evm_types::uint256_t val);
+    evm_types::uint256_t top()  const;
+    evm_types::uint256_t pop();
     size_t size() const;
 };
