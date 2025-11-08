@@ -22,7 +22,7 @@ void op_stack::handlePush(uint8_t opcode, Stack& stack, const std::vector<uint8_
     stack.push(val);
 }
 
-void op_stack::handleDup(uint8_t opcode, Stack& stack, size_t& pc){
+void op_stack::handleDup(uint8_t opcode, Stack& stack){
     size_t dupIndex = opcode - 0x7f;
     size_t size = stack.size();
 
@@ -33,5 +33,18 @@ void op_stack::handleDup(uint8_t opcode, Stack& stack, size_t& pc){
     if(opcode >= 0x80 && opcode <= 0x8f){
         uint256_t val = stack.at(size - dupIndex);
         stack.push(val);
+    }
+}
+
+void op_stack::handleSwap(uint8_t opcode, Stack& stack){
+    size_t swapIndex = opcode - 0x8f;
+    size_t size = stack.size();
+
+    if(size < swapIndex) {
+        throw std::runtime_error("Invalid SWAP: Not enough values on the stack");
+    }
+
+    if(opcode >= 0x90 && opcode <= 0x9f){
+        stack.swap(size - 1, size - 1 - swapIndex);
     }
 }

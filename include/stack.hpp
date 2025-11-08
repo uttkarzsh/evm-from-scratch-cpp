@@ -15,5 +15,6 @@ class Stack {
     evm_types::uint256_t pop();
     evm_types::uint256_t at(size_t index);
     size_t size() const;
+    void swap(size_t index_a, size_t index_b);
 
 };

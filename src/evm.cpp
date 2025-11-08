@@ -78,7 +78,26 @@ void EVM::execute(const std::vector<uint8_t>& bytecode){
             case Opcode::DUP14:     //0x8d
             case Opcode::DUP15:     //0x8e
             case Opcode::DUP16:     //0x8f
-                op_stack::handleDup(opcode, stack, pc);
+                op_stack::handleDup(opcode, stack);
+                break;
+
+            case Opcode::SWAP1:      //0x90
+            case Opcode::SWAP2:      //0x91
+            case Opcode::SWAP3:      //0x92
+            case Opcode::SWAP4:      //0x93
+            case Opcode::SWAP5:      //0x94
+            case Opcode::SWAP6:      //0x95
+            case Opcode::SWAP7:      //0x96
+            case Opcode::SWAP8:      //0x97
+            case Opcode::SWAP9:      //0x98
+            case Opcode::SWAP10:     //0x99
+            case Opcode::SWAP11:     //0x9a
+            case Opcode::SWAP12:     //0x9b
+            case Opcode::SWAP13:     //0x9c
+            case Opcode::SWAP14:     //0x9d
+            case Opcode::SWAP15:     //0x9e
+            case Opcode::SWAP16:     //0x9f
+                op_stack::handleSwap(opcode, stack);
                 break;
 
             default:

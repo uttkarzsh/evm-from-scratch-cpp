@@ -29,6 +29,10 @@ uint256_t Stack::top() const {
     return stack.back();
 }
 
+void Stack::swap(size_t index_a, size_t index_b){
+    std::swap(stack[index_a], stack[index_b]);
+}
+
 uint256_t Stack::at(size_t index){
     return stack.at(index);
 }
