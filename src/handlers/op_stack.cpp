@@ -21,3 +21,17 @@ void op_stack::handlePush(uint8_t opcode, Stack& stack, const std::vector<uint8_
     pc += bytesToPush;
     stack.push(val);
 }
+
+void op_stack::handleDup(uint8_t opcode, Stack& stack, size_t& pc){
+    size_t dupIndex = opcode - 0x7f;
+    size_t size = stack.size();
+
+    if(size < dupIndex) {
+        throw std::runtime_error("Invalid DUP: Not enough values on the stack");
+    }
+    
+    if(opcode >= 0x80 && opcode <= 0x8f){
+        uint256_t val = stack.at(size - dupIndex);
+        stack.push(val);
+    }
+}

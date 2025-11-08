@@ -13,5 +13,7 @@ class Stack {
     void push(evm_types::uint256_t val);
     evm_types::uint256_t top()  const;
     evm_types::uint256_t pop();
+    evm_types::uint256_t at(size_t index);
     size_t size() const;
+
 };

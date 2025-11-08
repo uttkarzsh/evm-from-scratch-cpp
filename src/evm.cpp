@@ -62,6 +62,25 @@ void EVM::execute(const std::vector<uint8_t>& bytecode){
                 op_stack::handlePush(opcode, stack, bytecode, pc);
                 break;
 
+            case Opcode::DUP1:      //0x80
+            case Opcode::DUP2:      //0x81
+            case Opcode::DUP3:      //0x82
+            case Opcode::DUP4:      //0x83
+            case Opcode::DUP5:      //0x84
+            case Opcode::DUP6:      //0x85
+            case Opcode::DUP7:      //0x86
+            case Opcode::DUP8:      //0x87
+            case Opcode::DUP9:      //0x88
+            case Opcode::DUP10:     //0x89
+            case Opcode::DUP11:     //0x8a
+            case Opcode::DUP12:     //0x8b
+            case Opcode::DUP13:     //0x8c
+            case Opcode::DUP14:     //0x8d
+            case Opcode::DUP15:     //0x8e
+            case Opcode::DUP16:     //0x8f
+                op_stack::handleDup(opcode, stack, pc);
+                break;
+
             default:
                 throw std::runtime_error("Unsupported opcode: " + std::to_string(opcode));
         }

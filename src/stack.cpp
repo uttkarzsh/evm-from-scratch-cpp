@@ -28,3 +28,7 @@ uint256_t Stack::top() const {
     }
     return stack.back();
 }
+
+uint256_t Stack::at(size_t index){
+    return stack.at(index);
+}
