@@ -65,6 +65,7 @@ namespace Opcode {
     constexpr uint8_t PUSH29 = 0x7c;
     constexpr uint8_t PUSH30 = 0x7d;
     constexpr uint8_t PUSH31 = 0x7e;
+    constexpr uint8_t PUSH32 = 0x7f;
 
     constexpr uint8_t DUP1 = 0x80;
     constexpr uint8_t DUP2 = 0x81;

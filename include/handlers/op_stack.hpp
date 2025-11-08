@@ -4,5 +4,5 @@
 #include <vector>
 
 namespace op_stack {
-    void handler(uint8_t opcode, Stack& stack, const std::vector<uint8_t>& bytecode, size_t& pc);
+    void handlePush(uint8_t opcode, Stack& stack, const std::vector<uint8_t>& bytecode, size_t& pc);
 }
