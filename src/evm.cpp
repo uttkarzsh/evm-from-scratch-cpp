@@ -25,6 +25,14 @@ void EVM::execute(const std::vector<uint8_t>& bytecode){
                 op_arithmetic::handler(opcode, stack);
                 break;
 
+            //Storage Operations
+            case Opcode::SLOAD:     //0x54
+                op_storage::handleRead(storage, stack);
+                break;
+            case Opcode::SSTORE:    //0x55
+                op_storage::handleWrite(storage, stack);
+                break;
+
             //Stack Manipulations
             case Opcode::PUSH0:   //0x5f
             case Opcode::PUSH1:   //0x60

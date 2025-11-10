@@ -2,10 +2,12 @@
 #include <vector>
 #include <cstdint>
 #include "stack.hpp"
+#include "storage.hpp"
 #include "types.hpp"
 
 class EVM {
     Stack stack;
+    Storage storage;
     size_t pc = 0;      //program counter
     bool running = true;
 

@@ -31,6 +31,10 @@ namespace Opcode {
     constexpr uint8_t XOR = 0x18;
     constexpr uint8_t NOT = 0x18;
 
+    //Storage Operations
+    constexpr uint8_t SLOAD = 0x54;
+    constexpr uint8_t SSTORE = 0x55;
+
     //Stack Manipulation
     constexpr uint8_t POP = 0x50;
     constexpr uint8_t PUSH0 = 0x5f;
